@@ -1,0 +1,17 @@
+<header>
+  <div>
+    <button class="btn"
+    (click)="router.navigate(['/task'])">View 1
+    </button>
+
+    <button class="btn"
+    (click)="router.navigate(['/multi-view'])">View 2
+    </button>
+  </div>
+
+  <h1> {{ title }} </h1>
+  <app-button *ngIf="hasRoute('/') || hasRoute('/multi-view') || hasRoute('/task')" color="{{ showAddTask ? 'red' : 'green' }}"
+    text="{{ showAddTask ? 'Close' : 'Add'}}" (btnClick)="toggleAddTask()">
+  </app-button>
+
+</header>
